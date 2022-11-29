@@ -9,9 +9,12 @@ namespace FriendLetter
     {
       WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-      builder.Services.AddControllerWithViews();
+      builder.Services.AddControllersWithViews();
 
       WebApplication app = builder.Build();
+
+      app.UseDeveloperExceptionPage();
+      app.UseHttpsRedirection();
 
       app.UseRouting();
 
